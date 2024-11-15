@@ -1,0 +1,361 @@
+
+:root {
+    --color-primario: rgb(43, 139, 223);
+    --color-secundario: #e91e63;
+    --color-terciario: #303030;
+    --color-cuaternario: #f2f2f2;
+    --color-slide: rgba(255, 255, 255, 0.5);
+    --color-nav: #17191b;
+    --bg-oscuro: #171717;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: var(--color-nav);
+    height: 14vh;
+    /*altura fija de la barra de navegación*/
+    width: 100vw;
+    /*ancho, 100% de la pagina*/
+    position: fixed;
+    /*barra de navegación fija=fixed arriba, queda como flotando*/
+    top: 0;
+    /*siempre va a estar fijada a la ventana donde nos encontremos en la punta izquierda*/
+    left: 0;
+    z-index: 1;
+}
+
+
+.nav {
+    display: flex;
+    /*así hago que se separen los bloques del menu por un lado el logo y por el otro el menu*/
+    justify-content: space-between;
+    /*acá les digo que tengan espacio entre ellos*/
+    max-width: 1100px;
+    /*es un breakpoint para que no se alargue a toda la pantalla el menu y quede mas centrado en paginas anchas*/
+    margin: 0 auto;
+
+}
+
+/*estilos a todos los links*/
+.nav-link {
+    color: var(--color-cuaternario);
+    text-decoration: none;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+}
+
+.nav .nav-link img {
+    height: 10vh;
+    margin-top: 0.8rem;
+
+}
+
+/*formato del estilo de la caja del menu*/
+.nav-menu {
+    display: flex;
+    /*así hago todos los elementos del elemento del menú queden en fila, en forma horizontal por defecto*/
+    margin-right: 1rem;
+    list-style: none;
+    /*elimino los puntos de la lista*/
+
+}
+
+/*formato del estilo del link del menu*/
+.nav-menu-item {
+    font-size: 1rem;
+    line-height: 15vh;
+    text-transform: uppercase;
+    /*todo el texto en mayúscula*/
+    width: max-content;
+    /*para que no corte el texto de lo que tenga el link, porque si son dos palabras elimina una al achicarlo*/
+    margin: 0 .6rem;
+    /*el espacio entre cada palabra del menu*/
+}
+
+.nav-menu-link {
+    padding: .5rem .7rem;
+    transition: all .7s ease;
+}
+
+.nav-menu-item.dropdown {
+    position: relative;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    cursor: pointer;
+}
+
+
+.dropdown-content {
+    position: absolute;
+    top: 80px;
+    background-color: var(--color-primario);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    min-width: 160px;
+    z-index: 1;
+    opacity: 0;
+    transition: all .7s ease;
+}
+
+.dropdown-content li {
+    list-style: none;
+}
+
+.dropdown-content a {
+    font-size: .8em;
+    color: var(--color-cuaternario);
+    height: 3em;
+    padding: 12px 16px;
+    line-height: 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: all .3s ease;
+}
+
+.dropdown-content li a i {
+    margin-right: 5px;
+}
+
+.nav-menu-link:hover {
+    border-radius: 5px;
+    font-weight: 700;
+    background-color: var(--color-primario);
+}
+
+.dropdown-content a:hover {
+    color: var(--color-nav);
+    font-weight: 700;
+}
+
+
+
+
+body{
+    background: #e8e8e8;
+}
+
+.form-area{
+    padding-top: 5%;
+}
+
+.row.single-form{
+    box-shadow: 0 2px 20px -5px rgba(0, 0, 0, 0.5) ;
+    background: #fff;
+}
+
+.left{
+    background-color: var(--color-terciario);
+    padding: 200px 93px;
+}
+
+.left h2{
+    font-family: poppins;
+    color: #fff;
+    font-weight: 700;
+    font-size: 68px;
+}
+
+.left h2 span{
+    font-weight: 100;
+}
+
+.left-h3 {
+    font-family: poppins;
+    color: #fff;
+    font-weight: 700;
+    font-size: 48px;
+
+}
+.right{
+    padding: 70px 100px;
+    position: relative;
+}
+
+.right i{
+    position: absolute;
+    font-size: 80px;
+    left: -27px;
+    top: 40px;
+    color: #fff;
+}
+
+.form-control{
+    border: 2px solid #000;
+}
+
+.right button{
+    border: none;
+    border-radius: 0;
+    background: #252525;
+    width: 180px;
+    color: #fff;
+    padding: 15px 0;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.right button:hover{
+    background: #252525;
+
+}
+
+
+@media (min-width: 768px) and (max-width: 991px){
+    .right i{
+        top: -52px;
+        transform: rotate(90deg);
+        left: 50%;
+
+    }
+}
+
+
+@media  (max-width: 767px){
+    .left{
+        padding: 90px 16px;
+        text-align: center;        
+    }
+    
+    .left h2{
+        font-size: 25px;
+    }
+
+    .right{
+        padding: 25px;
+    }
+
+    .right i{
+        top: -52px;
+        transform: rotate(9deg);
+        left: 45%;
+    }
+    .right button{
+        width: 150px;
+        padding: 12px 0;     
+
+    }
+}
+
+/***********FOOTER********************/
+#footer-content {
+    width: 100%;
+    background-color: var(--color-terciario);
+}
+
+.footer-container {
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: 100%;
+    gap: 2em;
+}
+
+.copy-footer {
+    text-align: center;
+    color: var(--color-cuaternario);
+    height: auto;
+    padding: .3em;
+}
+
+.footer-access {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: .5em;
+    padding: 1em;
+    gap: 5em;
+}
+
+.footer-link a {
+    text-decoration: none;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1em;
+    padding: 2em;
+
+    border-radius: 1em;
+
+    background-color: var(--bg-oscuro);
+    color: var(--color-primario);
+    text-transform: uppercase;
+    text-align: center;
+
+    transition: transform 0.1s ease-in;
+}
+
+.footer-link a i {
+    font-size: 3em;
+}
+
+.footer-link a:hover {
+    background-color: var(--bg-oscuro);
+    color: var(--color-secundario);
+    box-shadow: 0px 0px 19px 3px rgba(255, 255, 255, 0.58);
+
+    transform: scale(1.03);
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+    padding: 1.5em;
+    background-color: var(--bg-oscuro);
+}
+
+.logo-link {
+    margin-left: 5em;
+}
+
+.logo-link a img {
+    width: 12em;
+    border-radius: 50%;
+}
+
+.address-info a,
+.attention-info {
+    display: flex;
+    flex-direction: row;
+    gap: .6em;
+    font-size: 1em;
+    text-decoration: none;
+    color: var(--color-primario);
+}
+
+.address-info h2{
+    color: var(--color-cuaternario);
+}
+
+.address-info i,
+.attention-info i {
+    font-size: 2em;
+}
+
+.address-info-p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.attention-info {
+    height: 6em;
+}
+
+.attention-info h5 {
+    font-size: 1.3em;
+}
