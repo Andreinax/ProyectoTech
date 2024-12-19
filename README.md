@@ -17,7 +17,8 @@ de contacto.
 - Interacción por los diferentes espacios a traves del menú inicial. (En proceso)
 - Espacio dedicado y especializado para sólo las ofertas de nuestra empresa. (En Proceso)
 - Formulario de Contacto para los usuarios. 
-- Carrito de compras interactivo. (En proceso)
+- Carrito de compras interactivo, donde se puede agregar, eliminar o totalizar la compra.
+- formulario de pago para finalizar la compra
 - Espacio de nuestras redes sociales y nuestra informacón de ubicación y contacto.
 
 🛠️ Tecnologías Utilizadas
