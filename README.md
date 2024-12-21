@@ -16,8 +16,9 @@ de contacto.
 🚀 Características
 - Interacción por los diferentes espacios a traves del menú inicial. (En proceso)
 - Espacio dedicado y especializado para sólo las ofertas de nuestra empresa. (En Proceso)
-- Formulario de Contacto para los usuarios. 
-- Carrito de compras interactivo. (En proceso)
+- Formulario de Contacto para los usuarios con envío a mail personal. (Completado)
+- Formulario de pago al completar la compra, con solicitud de información para el pago. (Completado)
+- Carrito de compras interactivo, donde se puede agregar o eliminar cantidades y a su vez visualizar el monto total y vaciar el carrito. (Completado)
 - Espacio de nuestras redes sociales y nuestra informacón de ubicación y contacto.
 
 🛠️ Tecnologías Utilizadas
