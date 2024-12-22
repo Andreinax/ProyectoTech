@@ -100,21 +100,20 @@ function vaciarCarrito() {
 }
 
 // Botón para finalizar la compra con sweet Alert
-document.getElementById('finalizar-compra').addEventListener('click', () => 
-    {
-        Swal.fire({
-            title: 'Compra Procesada',
-            text: 'Se ha procesado la compra #1200',
-            text:'Seras redireccionado para completar el Pago.',
-            icon: 'success',
-            confirmButtonText: 'Aceptar'
-        });
-
-        // Limpiar el carrito después de finalizar la compra
-        localStorage.removeItem('cart'); 
-        
-        // Redirigir al inicio despues de 4 segundos
-        setTimeout(() => {
-        window.location.href = 'formDeCompra.html'; 
-        }, 4000);     
+document.getElementById('finalizar-compra').addEventListener('click', () => {
+    Swal.fire({
+        title: 'Compra Procesada',
+        text: 'Se ha procesado la compra #1200',
+        text: 'Seras redireccionado para completar el Pago.',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
     });
+
+    // Limpiar el carrito después de finalizar la compra
+    localStorage.removeItem('carrito');
+
+    // Redirigir al inicio despues de 4 segundos
+    setTimeout(() => {
+        window.location.href = 'formDeCompra.html';
+    }, 4000);
+});
