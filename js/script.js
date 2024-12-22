@@ -1,6 +1,11 @@
 // Carrito almacenado en localStorage
-let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
+let carrito;
+try {
+    carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+} catch (e) {
+    console.error('Error al parsear el carrito desde localStorage:', e);
+    carrito = [];
+}
 // Función para agregar un producto al carrito
 function comprar(producto, precio) {
     const index = carrito.findIndex(item => item.producto === producto);
@@ -13,7 +18,7 @@ function comprar(producto, precio) {
         // Si no está, agrega un nuevo objeto
         carrito.push({ producto, precio, cantidad: 1, subtotal: precio });
     }
-
+    console.log(`Producto: ${producto}, Precio: ${precio}`);
     localStorage.setItem('carrito', JSON.stringify(carrito));
     alert(`${producto} ha sido agregado al carrito.`);
 }
@@ -49,9 +54,13 @@ function mostrarCarrito() {
     const total = carrito.reduce((sum, item) => sum + item.subtotal, 0);
     cartTotal.textContent = total;
 }
-
+mostrarCarrito();
 // Función para actualizar la cantidad de un producto
 function actualizarCantidad(index, cambio) {
+    if (index < 0 || index >= carrito.length) {
+        console.error('Índice fuera de rango:', index);
+        return;
+    }
     carrito[index].cantidad += cambio;
 
     if (carrito[index].cantidad <= 0) {
@@ -100,11 +109,10 @@ function vaciarCarrito() {
 }
 
 // Botón para finalizar la compra con sweet Alert
-document.getElementById('finalizar-compra').addEventListener('click', () => {
+const finalizarCompraBtn = document.getElementById('finalizar-compra').addEventListener('click', () => {
     Swal.fire({
         title: 'Compra Procesada',
-        text: 'Se ha procesado la compra #1200',
-        text: 'Seras redireccionado para completar el Pago.',
+        text: 'Se ha procesado la compra #1200. Serás redireccionado para completar el pago.',
         icon: 'success',
         confirmButtonText: 'Aceptar'
     });
